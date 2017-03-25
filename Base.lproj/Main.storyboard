@@ -13,7 +13,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Home" id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="Park" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -53,12 +53,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="Map" destination="9Mj-4o-RaC" id="S85-L1-9Gq"/>
+                        <outlet property="Map" destination="9Mj-4o-RaC" id="q7S-cl-m3p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816.8" y="122.78860569715144"/>
+            <point key="canvasLocation" x="1822" y="123"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="00w-wX-Xn1">
