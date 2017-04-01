@@ -15,15 +15,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var Map: MKMapView!
     
     let manager = CLLocationManager()
+    var setLocation = false
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if (!setLocation) {
+            print("HERE")
+            updateLocation(locations: locations)
+        }
+        setLocation = true
         
+    }
+    
+    func updateLocation(locations: [CLLocation]) {
         let location = locations[0]
-        
         let userLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        
-        
-        
         let span = MKCoordinateSpanMake(0.004, 0.004)
         let region = MKCoordinateRegionMake(userLocation, span)
         
@@ -36,6 +41,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         annotation.subtitle = "is here"
         
         Map.addAnnotation(annotation)
+        setLocation = true
         
         Map.showsUserLocation = true
     }
@@ -43,7 +49,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
