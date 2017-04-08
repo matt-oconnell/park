@@ -49,6 +49,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let alreadySeen = UserDefaults.standard.bool(forKey: "alreadySeen")
+        if alreadySeen {
+            print("welcome back")
+        } else {
+            // show a new overlay
+            print("hi")
+        }
+        
+        UserDefaults.standard.set(true, forKey: "alreadySeen")
+        
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()

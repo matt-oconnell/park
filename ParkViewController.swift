@@ -16,12 +16,17 @@ class ParkViewController: UIViewController {
     
     @IBAction func setDay(_ sender: UIButton) {
         if let buttonText = sender.titleLabel?.text {
+            UserDefaults.standard.set(buttonText, forKey:"parkDay")
             currentDayLabel.text = buttonText
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let day = UserDefaults.standard.string(forKey:"parkDay") {
+            currentDayLabel.text = day
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
